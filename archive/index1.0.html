@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">Elvis Quiz</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="coll, Elvis apse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <h5 style= "margin-left: 10%;">Score:</h5>
+          <h5 id="score"></h5>
+        </div>
+      </div>
+    </nav>
+
+    <div class="col col-lg-5" style="margin-top: 5%; margin-left: 30%;">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title" id="questionTitle"></h5>
+          <p class="card-text" id="question">
+            
+          </p>
+          <a href="#" id="answer1" class="btn btn-primary"></a>
+          <a href="#" id="answer2" class="btn btn-primary"></a>
+          <a href="#" id="answer3" class="btn btn-primary"></a>
+          <a href="#" id="answer4" class="btn btn-primary"></a>
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+    
+    //var questionTitle = document.getElementById("questionTitle")
+    //var question = document.getElementById("question")
+    //var answer1 = document.getElementById("answer")
+    //var answer2 = document.getElementById("answer2")
+    //var answer3 = document.getElementById("answer3")
+    //var answer4 = document.getElementById("answer4")
+    //var score = document.getElementById("score")
+
+    score = document.getElementById("score").innerHTML = 0;
+  
+    var questionTitles = [
+
+    "question 1:",
+    "question 2:",
+    "question 3:",
+    "question 4:",
+    "question 5:"
+
+    ]
+
+    var questions = [
+    ,
+    ,
+    , 
+    "In 1958 Elvis joined_____", 
+    "Elvis performed duets with_____"
+    ]
+
+    var possibleAnswers1 = [
+        "Capitol Records",
+        "Priscilla",
+        "Dapper Dan",
+        "The Army",
+        "Ray Charles"
+    ]
+
+    var possibleAnswers2 = [
+        "Sun Records",
+        "Lisa Marie",
+        "Fancy Lad",
+        "The Navy",
+        "Frank Sinatra"        
+    ]
+
+    var possibleAnswers3 = [
+        "Staxx Records",
+        "Camilla",
+        "Black and White",
+        "The Airforce",
+        "Dolly Parton"
+    ]
+
+    var possibleAnswers4 = [
+        "Death Row Records",
+        "Mom",
+        "Fop",
+        "The Beatles",
+        "All of the above"
+    ]
+
+    var correctAnswer = [
+    possibleAnswers2[0],
+    possibleAnswers1[1],
+    possibleAnswers3[2],
+    possibleAnswers1[3],
+    possibleAnswers4[4]
+    ]
+
+
+    document.getElementById("questionTitle").innerHTML = questionTitles[0];
+    document.getElementById("question").innerHTML = questions[0];
+    document.getElementById("answer1").innerHTML = possibleAnswers1[0];
+    document.getElementById("answer2").innerHTML = possibleAnswers2[0];
+    document.getElementById("answer3").innerHTML = possibleAnswers3[0];
+    document.getElementById("answer4").innerHTML = possibleAnswers4[0];
+    
+    //add start button
+
+    //loop for quiz
+    for(var i = 0; i < questions.length; i++);
+        //add timer
+        //onclick event cycles through indexes [++] and resets timer
+            //document.querySelector("btn").addEventListener("click")
+
+        //check for correct answer
+            //if [onclick] === correctAnswer[0], ++ to score
+                //add remaining time to score
+            //else do nothing
+    // break loop after 5 questions and save score to local storage
+        
+
+    </script>
+
+  </body>
+</html>
