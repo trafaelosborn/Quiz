@@ -1,36 +1,76 @@
 var startButton = document.getElementById("start-btn");
-let finishButton = document.getElementById("finish-btn")
+var finishButton = document.getElementById("finish-btn");
 var questionEl = document.getElementById("question");
 var buttons = document.getElementById("answer-buttons");
-let score = 0
-document.getElementById("score").textContent = "Score: " + score;
-let correctAnswer = "Sun Records"
-
+var score = 0;
+var correctAnswer;
 var bns = document.getElementsByTagName("button");
 
-function addtoev() {
-  var bns = document.getElementsByTagName("button");
+var questions = [
+  {
+    title: "What was the first label Elvis was signed to?",
+    choices: [
+      "Sun Records",
+      "RCA Records",
+      "Staxx Records",
+      "Death Row Records"
+    ],
+    answer: "Sun Records"
+  },
+
+  {
+    title: "Elvis' wife was named_____",
+    choices: ["Priscilla", "Lisa Marie", "Emmylou", "Mom"],
+    answer: "Priscilla"
+  },
+
+  {
+    title: "Elvis' favorite brand of pomade was______",
+    choices: ["Dapper Dan", "Fop", "Black and White", "Dandy Boy"],
+    answer: "Black and White"
+  },
+
+  {
+    title: "In 1958 Elvis joined_____",
+    choices: ["The Navy", "The Army", "The Air Force", "The Beatles"],
+    answer: "The Army"
+  },
+
+  {
+    title: "Elvis perfomed a duet with",
+    choices: [
+      "Frank Sinatra",
+      "Dolly Parton",
+      "Ray Charles",
+      "All of the above"
+    ],
+    answer: "All of the above"
+  }
+];
+
+console.log(questions[0].answer);
+
+function addtoev(questions) {
   for (i = 0; i < bns.length; i++) {
     bns[i].addEventListener("click", function(event) {
-      //console.log(event)
-      //console.log(this)
-      guess = this.textContent
-   
-      if (guess == correctAnswer) {
-        score++
-      }
-      console.log(correctAnswer)
+      guess = this.textContent;
 
-    });
-   
+      correctAnswer = questions[i].answer;
+
+      if (guess == correctAnswer) {
+        score++;
+      }
+
+      document.getElementById("score").textContent = "Score: " + score;
+      console.log("correct answer: " + correctAnswer);
+      console.log("guess: " + guess);
+      console.log("score: " + score);
+    });  
   }
-  
 }
 
-
-
 window.addEventListener("load", function() {
-  addtoev();
+  addtoev(questions);
 });
 
 startButton.addEventListener("click", startGame);
@@ -41,10 +81,8 @@ function startGame() {
   
   questionEl.classList.remove("hide");
   buttons.classList.remove("hide");
-  let time = setInterval(function(){ logScore(); }, 30000); 
+  var time = setInterval(function(){ logScore(); }, 30000); 
 }
-
-
 
 function runQuestions() {
   var guess = this.textContent
@@ -97,49 +135,6 @@ function logScore() {
   //stop timer
   
 }
-
-
-var questions = [
-  {
-    title: "What was the first label Elvis was signed to?",
-    choices: [
-      "Sun Records",
-      "RCA Records",
-      "Staxx Records",
-      "Death Row Records"
-    ],
-    answer: "Sun Records"
-  },
-
-  {
-    title: "Elvis' wife was named_____",
-    choices: ["Priscilla", "Lisa Marie", "Emmylou", "Mom"],
-    answer: "Priscilla"
-  },
-
-  {
-    title: "Elvis' favorite brand of pomade was______",
-    choices: ["Dapper Dan", "Fop", "Black and White", "Dandy Boy"],
-    answer: "Black and White"
-  },
-
-  {
-    title: "In 1958 Elvis joined_____",
-    choices: ["The Navy", "The Army", "The Air Force", "The Beatles"],
-    answer: "The Army"
-  },
-
-  {
-    title: "Elvis perfomed a duet with",
-    choices: [
-      "Frank Sinatra",
-      "Dolly Parton",
-      "Ray Charles",
-      "All of the above"
-    ],
-    answer: "All of the above"
-  }
-];
 
 document.getElementById("question").textContent = questions[0].title;
 document.getElementById("answer1").textContent = questions[0].choices[0];
